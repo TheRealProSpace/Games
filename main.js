@@ -6,12 +6,12 @@ const ctx = canvas.getContext("2d");
 let  direction = "right";
 
 //snake
-let snake = [{x: 250, y: 250}];
+let snake = [{x: 250, y: 250, w: 40, h: 40}];
 
 //draw the snake
 function drawSnake() {
     ctx.fillStyle = "pink";
-    ctx.fillRect(snake[0].x, snake[0].y, 10, 10);
+    ctx.fillRect(snake[0].x, snake[0].y, snake[0].w, snake[0].h);
 }
 
 //update the game state
