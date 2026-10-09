@@ -19,19 +19,29 @@ function drawPillars() {
 }
 
 function movePillars() {
-	for (let i = 0; i < pillar.length; i++) {
+	for (let i = 0; i < pillar.length; i+=2) {
 	    pillar[i].x -= 3;
-	}
-	if (pillar[0].x <= 0) {
-	    pillar[0].x = 400;
-	    pillar[1].x = 400;
-	}
-	if (pillar[2].x <= 0) {
-	    pillar[2].x = 600;
-	    pillar[3].x = 600;
+	    pillar[i+1].x -= 3;
+	    if (pillar[i].x <= -pillar[i].w) {
+	    	pillar[i].x = 420;
+	    	pillar[i+1].x = 420;
+		}
 	}
 }
 
+function moveBird() {
+    if (direction === "down") {
+        bird.y += 3;
+    } else if (direction === "up") {
+        bird.y -= 3;
+    }
+    document.addEventListener("mousedown", e => {
+        direction = "up";
+    });
+    document.addEventListener("mouseup", e => {
+        direction = "down";
+    });
+}
 
 
 //bird
@@ -50,5 +60,6 @@ function update() {
 	drawBird();
 	drawPillars();
 	movePillars();
+	moveBird();
 }
 update();
