@@ -14,6 +14,10 @@ function drawSnake() {
     ctx.fillRect(snake[0].x, snake[0].y, snake[0].w, snake[0].h);
 }
 
+function moveSnake() {
+    
+}
+
 //update the game state
 function update() {
     ctx.clearRect(0, 0, 500, 500);
