@@ -1,29 +1,38 @@
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 
-//snake game
 //variables
-let  direction = "right";
+let bird = { x: 50, y: 170, w: 30, h: 30 };
+let pillar = [
+	{ x: 400, y: 100, w: 50, h: 200 },
+	{ x: 200, y: 100, w: 59, h: 200}
+];
+let pillar2 = ;
 
-//snake
-let snake = [{x: 250, y: 250, w: 40, h: 40}];
-
-//draw the snake
-function drawSnake() {
-    ctx.fillStyle = "pink";
-    ctx.fillRect(snake[0].x, snake[0].y, snake[0].w, snake[0].h);
+function drawPillars() {
+    ctx.fillStyle = "green";
+    for (let i = 0; i < pillar.length; i++) {
+        ctx.fillRect(pillar[i].x, pillar[i].y, pillar[i].w, pillar[i].h);
+    }
 }
 
-function moveSnake() {
-    
+
+
+
+
+//bird
+function drawBird() {
+    ctx.fillStyle = "yellow";
+    ctx.fillRect(bird.x, bird.y, bird.w, bird.h);
 }
 
-//update the game state
+
+//update
 function update() {
-    ctx.clearRect(0, 0, 500, 500);
-    requestAnimationFrame(update);
-
-    //updates
-    drawSnake();
+	requestAnimationFrame(update);
+	ctx.clearRect(0, 0, 400, 400);
+	
+	//updates
+	drawBird();
 }
 update();
