@@ -1,53 +1,62 @@
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 
-//variables
-let bird = { x: 50, y: 170, w: 30, h: 30 };
-let pillar = [
-	{ x: 400, y: -50, w: 50, h: 200 },
-	{ x: 400, y: 250, w: 50, h: 200 },
-	{ x: 600, y: -50, w: 50, h: 200 },
-	{ x: 600, y: 250, w: 50, h: 200 }
+let buttons = [
+	{x: 120, y: 120, r: 40, c: "red"},
+	{x: 200, y: 120, r: 40, c: "yellow"},
+	{x: 120, y: 200, r: 40, c: "green"},
+	{x: 200, y: 200, r: 40, c: "blue"},
+	{x: 160, y: 160, r: 40, c: "black"}
 ];
-let direction = "down";
 
-function drawPillars() {
-	ctx.fillStyle = "lime";
-	for (let i = 0; i < pillar.length; i++) {
-		ctx.fillRect(pillar[i].x, pillar[i].y, pillar[i].w, pillar[i].h);
+let randoms = [];
+
+for (let i = 0; i < 32; i++) {
+	let e = Math.random() * (3);
+	if (e === 0) {
+		randoms.push("red");
+	} else if (e === 1) {
+		randoms.push("yellow");
+	} else if (e === 2) {
+		randoms.push("green");
+	} else if (e === 3) {
+		randoms.push("blue");
 	}
 }
 
-function movePillars() {
-	for (let i = 0; i < pillar.length; i+=2) {
-	    pillar[i].x -= 3;
-	    pillar[i+1].x -= 3;
-	    if (pillar[i].x <= -pillar[i].w) {
-	    	pillar[i].x = 420;
-	    	pillar[i+1].x = 420;
+
+canvas.addEventListener("click", (e) => {
+	const rect = canvas.getBoundingClientRect();
+	const mouseX = e.clientX - rect.left;
+	const mouseY = e.clientY - rect.top;
+
+	// Check which button was clicked
+	buttons.forEach(btn => {
+		const distance = Math.sqrt(
+			Math.pow(mouseX - btn.x, 2) + Math.pow(mouseY - btn.y, 2)
+		);
+
+		if (distance < btn.r) {
+			console.log(`Clicked ${btn.color}`);
+			// Add to sequence or handle click
+			switch (btn.c) {
+				case "red":
+				case "yellow":
+				case "green":
+				case "blue":
+			}
 		}
+	});
+});
+
+
+function drawButtons() {
+	for (let i = 0; i < buttons.length; i++) {
+		ctx.fillStyle = buttons[i].c;
+		ctx.beginPath();
+		ctx.arc(buttons[i].x, buttons[i].y, buttons[i].r, 0, Math.PI * 2);
+		 ctx.fill();
 	}
-}
-
-function moveBird() {
-    if (direction === "down") {
-        bird.y += 3;
-    } else if (direction === "up") {
-        bird.y -= 3;
-    }
-    document.addEventListener("mousedown", e => {
-        direction = "up";
-    });
-    document.addEventListener("mouseup", e => {
-        direction = "down";
-    });
-}
-
-
-//bird
-function drawBird() {
-	ctx.fillStyle = "yellow";
-	ctx.fillRect(bird.x, bird.y, bird.w, bird.h);
 }
 
 
@@ -57,9 +66,6 @@ function update() {
 	ctx.clearRect(0, 0, 400, 400);
 	
 	//updates
-	drawBird();
-	drawPillars();
-	movePillars();
-	moveBird();
+	drawButtons();
 }
 update();
