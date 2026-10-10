@@ -10,8 +10,10 @@ let buttons = [
 ];
 
 let randoms = [];
+let player = [];
+let ammount = 1;
 
-for (let i = 0; i < 32; i++) {
+for (let i = 0; i < 31; i++) {
 	let e = Math.random() * (3);
 	if (e === 0) {
 		randoms.push("red");
@@ -37,17 +39,56 @@ canvas.addEventListener("click", (e) => {
 		);
 
 		if (distance < btn.r) {
-			console.log(`Clicked ${btn.color}`);
+			console.log(`Clicked ${btn.c}`);
 			// Add to sequence or handle click
 			switch (btn.c) {
 				case "red":
+					player.push("red");
 				case "yellow":
+					player.push("yellow");
 				case "green":
+					player.push("green");
 				case "blue":
+					player.push("blue");
 			}
 		}
 	});
 });
+
+function updateButtons() {
+	switch (ammount) {
+		for (let i = 0; i < 31; i++) {
+		    case i:
+		    	
+		}
+		case 1:
+			let e1 = randoms[0];
+			switch (e1) {
+			    case "red":
+			    	buttons[0].c = "black";
+			    	setTimeout(() => {
+			    	    buttons[0].c = "red";
+			    	});
+			    case "yellow":
+			    	buttons[0].c = "black";
+			    	setTimeout(() => {
+			    	    buttons[0].c = "yellow";
+			    	});
+			    case "green":
+			    	buttons[0].c = "black";
+			    	setTimeout(() => {
+			    	    buttons[0].c = "green";
+			    	});
+			    case "blue":
+			    	buttons[0].c = "black";
+			    	setTimeout(() => {
+			    	    buttons[0].c = "blue";
+			    	});
+			}
+			
+			
+	}
+}
 
 
 function drawButtons() {
