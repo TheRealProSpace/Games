@@ -110,7 +110,7 @@ function choice() {
 			switch (sq3) {
 				case "x":
 					ctx.save();
-					ctx.translate(220, 15);
+					ctx.translate(360, 15);
 					ctx.rotate(Math.PI / 8);
 					ctx.fillStyle = "red";
 					ctx.fillRect(0, 0, 10, 100);
@@ -118,7 +118,7 @@ function choice() {
 					
 					
 					ctx.save();
-					ctx.translate(180, 20);
+					ctx.translate(320, 20);
 					ctx.rotate(Math.PI / -8);
 					ctx.fillStyle = "red";
 					ctx.fillRect(0, 0, 10, 100);
@@ -130,7 +130,7 @@ function choice() {
 			switch (sq4) {
 				case "x":
 					ctx.save();
-					ctx.translate(220, 15);
+					ctx.translate(80, 155);
 					ctx.rotate(Math.PI / 8);
 					ctx.fillStyle = "red";
 					ctx.fillRect(0, 0, 10, 100);
@@ -138,7 +138,7 @@ function choice() {
 					
 					
 					ctx.save();
-					ctx.translate(180, 20);
+					ctx.translate(40, 160);
 					ctx.rotate(Math.PI / -8);
 					ctx.fillStyle = "red";
 					ctx.fillRect(0, 0, 10, 100);
@@ -150,7 +150,7 @@ function choice() {
 			switch (sq5) {
 				case "x":
 					ctx.save();
-					ctx.translate(220, 15);
+					ctx.translate(220, 155);
 					ctx.rotate(Math.PI / 8);
 					ctx.fillStyle = "red";
 					ctx.fillRect(0, 0, 10, 100);
@@ -158,7 +158,7 @@ function choice() {
 					
 					
 					ctx.save();
-					ctx.translate(180, 20);
+					ctx.translate(180, 160);
 					ctx.rotate(Math.PI / -8);
 					ctx.fillStyle = "red";
 					ctx.fillRect(0, 0, 10, 100);
@@ -170,7 +170,7 @@ function choice() {
 			switch (sq6) {
 				case "x":
 					ctx.save();
-					ctx.translate(220, 15);
+					ctx.translate(360, 155);
 					ctx.rotate(Math.PI / 8);
 					ctx.fillStyle = "red";
 					ctx.fillRect(0, 0, 10, 100);
@@ -178,7 +178,7 @@ function choice() {
 					
 					
 					ctx.save();
-					ctx.translate(180, 20);
+					ctx.translate(320, 160);
 					ctx.rotate(Math.PI / -8);
 					ctx.fillStyle = "red";
 					ctx.fillRect(0, 0, 10, 100);
@@ -190,7 +190,7 @@ function choice() {
 			switch (sq7) {
 				case "x":
 					ctx.save();
-					ctx.translate(220, 15);
+					ctx.translate(80, 295);
 					ctx.rotate(Math.PI / 8);
 					ctx.fillStyle = "red";
 					ctx.fillRect(0, 0, 10, 100);
@@ -198,7 +198,7 @@ function choice() {
 					
 					
 					ctx.save();
-					ctx.translate(180, 20);
+					ctx.translate(40, 300);
 					ctx.rotate(Math.PI / -8);
 					ctx.fillStyle = "red";
 					ctx.fillRect(0, 0, 10, 100);
@@ -210,7 +210,7 @@ function choice() {
 			switch (sq8) {
 				case "x":
 					ctx.save();
-					ctx.translate(220, 15);
+					ctx.translate(220, 295);
 					ctx.rotate(Math.PI / 8);
 					ctx.fillStyle = "red";
 					ctx.fillRect(0, 0, 10, 100);
@@ -218,7 +218,7 @@ function choice() {
 					
 					
 					ctx.save();
-					ctx.translate(180, 20);
+					ctx.translate(180, 300);
 					ctx.rotate(Math.PI / -8);
 					ctx.fillStyle = "red";
 					ctx.fillRect(0, 0, 10, 100);
@@ -230,7 +230,7 @@ function choice() {
 			switch (sq9) {
 				case "x":
 					ctx.save();
-					ctx.translate(220, 15);
+					ctx.translate(360, 295);
 					ctx.rotate(Math.PI / 8);
 					ctx.fillStyle = "red";
 					ctx.fillRect(0, 0, 10, 100);
@@ -238,7 +238,7 @@ function choice() {
 					
 					
 					ctx.save();
-					ctx.translate(180, 20);
+					ctx.translate(320, 300);
 					ctx.rotate(Math.PI / -8);
 					ctx.fillStyle = "red";
 					ctx.fillRect(0, 0, 10, 100);
