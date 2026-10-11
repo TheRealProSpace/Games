@@ -64,189 +64,65 @@ function returnBoard() {
 	}
 }
 
+""
 
 function choice() {
 	if (square === 0) {
-			switch (sq1) {
-				case "x":
-					ctx.save();
-					ctx.translate(80, 15);
-					ctx.rotate(Math.PI / 8);
-					ctx.fillStyle = "red";
-					ctx.fillRect(0, 0, 10, 100);
-					ctx.restore();
-					
-					
-					ctx.save();
-					ctx.translate(40, 20);
-					ctx.rotate(Math.PI / -8);
-					ctx.fillStyle = "red";
-					ctx.fillRect(0, 0, 10, 100);
-					ctx.restore();
-					break;
-				case "o":
-				break;
-			}
-			switch (sq2) {
-				case "x":
-					ctx.save();
-					ctx.translate(220, 15);
-					ctx.rotate(Math.PI / 8);
-					ctx.fillStyle = "red";
-					ctx.fillRect(0, 0, 10, 100);
-					ctx.restore();
-					
-					
-					ctx.save();
-					ctx.translate(180, 20);
-					ctx.rotate(Math.PI / -8);
-					ctx.fillStyle = "red";
-					ctx.fillRect(0, 0, 10, 100);
-					ctx.restore();
-					break;
-				case "o":
-				break;
-			}
-			switch (sq3) {
-				case "x":
-					ctx.save();
-					ctx.translate(360, 15);
-					ctx.rotate(Math.PI / 8);
-					ctx.fillStyle = "red";
-					ctx.fillRect(0, 0, 10, 100);
-					ctx.restore();
-					
-					
-					ctx.save();
-					ctx.translate(320, 20);
-					ctx.rotate(Math.PI / -8);
-					ctx.fillStyle = "red";
-					ctx.fillRect(0, 0, 10, 100);
-					ctx.restore();
-					break;
-				case "o":
-				break;
-			}
-			switch (sq4) {
-				case "x":
-					ctx.save();
-					ctx.translate(80, 155);
-					ctx.rotate(Math.PI / 8);
-					ctx.fillStyle = "red";
-					ctx.fillRect(0, 0, 10, 100);
-					ctx.restore();
-					
-					
-					ctx.save();
-					ctx.translate(40, 160);
-					ctx.rotate(Math.PI / -8);
-					ctx.fillStyle = "red";
-					ctx.fillRect(0, 0, 10, 100);
-					ctx.restore();
-					break;
-				case "o":
-				break;
-			}
-			switch (sq5) {
-				case "x":
-					ctx.save();
-					ctx.translate(220, 155);
-					ctx.rotate(Math.PI / 8);
-					ctx.fillStyle = "red";
-					ctx.fillRect(0, 0, 10, 100);
-					ctx.restore();
-					
-					
-					ctx.save();
-					ctx.translate(180, 160);
-					ctx.rotate(Math.PI / -8);
-					ctx.fillStyle = "red";
-					ctx.fillRect(0, 0, 10, 100);
-					ctx.restore();
-					break;
-				case "o":
-				break;
-			}
-			switch (sq6) {
-				case "x":
-					ctx.save();
-					ctx.translate(360, 155);
-					ctx.rotate(Math.PI / 8);
-					ctx.fillStyle = "red";
-					ctx.fillRect(0, 0, 10, 100);
-					ctx.restore();
-					
-					
-					ctx.save();
-					ctx.translate(320, 160);
-					ctx.rotate(Math.PI / -8);
-					ctx.fillStyle = "red";
-					ctx.fillRect(0, 0, 10, 100);
-					ctx.restore();
-					break;
-				case "o":
-				break;
-			}
-			switch (sq7) {
-				case "x":
-					ctx.save();
-					ctx.translate(80, 295);
-					ctx.rotate(Math.PI / 8);
-					ctx.fillStyle = "red";
-					ctx.fillRect(0, 0, 10, 100);
-					ctx.restore();
-					
-					
-					ctx.save();
-					ctx.translate(40, 300);
-					ctx.rotate(Math.PI / -8);
-					ctx.fillStyle = "red";
-					ctx.fillRect(0, 0, 10, 100);
-					ctx.restore();
-					break;
-				case "o":
-				break;
-			}
-			switch (sq8) {
-				case "x":
-					ctx.save();
-					ctx.translate(220, 295);
-					ctx.rotate(Math.PI / 8);
-					ctx.fillStyle = "red";
-					ctx.fillRect(0, 0, 10, 100);
-					ctx.restore();
-					
-					
-					ctx.save();
-					ctx.translate(180, 300);
-					ctx.rotate(Math.PI / -8);
-					ctx.fillStyle = "red";
-					ctx.fillRect(0, 0, 10, 100);
-					ctx.restore();
-					break;
-				case "o":
-				break;
-			}
-			switch (sq9) {
-				case "x":
-					ctx.save();
-					ctx.translate(360, 295);
-					ctx.rotate(Math.PI / 8);
-					ctx.fillStyle = "red";
-					ctx.fillRect(0, 0, 10, 100);
-					ctx.restore();
-					
-					
-					ctx.save();
-					ctx.translate(320, 300);
-					ctx.rotate(Math.PI / -8);
-					ctx.fillStyle = "red";
-					ctx.fillRect(0, 0, 10, 100);
-					ctx.restore();
-					break;
-				case "o":
-				break;
-			}
+	switch (sq1) {
+    case "x":
+        drawX(80, 15, 40, 20);
+        break;
+}
+
+switch (sq2) {
+    case "x":
+        drawX(220, 15, 180, 20);
+        break;
+}
+
+switch (sq3) {
+    case "x":
+        drawX(360, 15, 320, 20);
+        break;
+}
+
+switch (sq4) {
+    case "x":
+        drawX(80, 155, 40, 160);
+        break;
+}
+
+switch (sq5) {
+    case "x":
+        drawX(220, 155, 180, 160);
+        break;
+}
+
+switch (sq6) {
+    case "x":
+        drawX(360, 155, 320, 160);
+        break;
+}
+
+switch (sq7) {
+    case "x":
+        drawX(80, 295, 40, 300);
+        break;
+}
+
+switch (sq8) {
+    case "x":
+        drawX(220, 295, 180, 300);
+        break;
+}
+
+switch (sq9) {
+    case "x":
+        drawX(360, 295, 320, 300);
+        break;
+}
+	}
+	
 			
 			
 			switch (choice1) {
@@ -271,7 +147,21 @@ function choice() {
 	}
 }
 
+function drawX(x1, y1, x2, y2) {
+    ctx.save();
+    ctx.translate(x1, y1);
+    ctx.rotate(Math.PI / 8);
+    ctx.fillStyle = "red";
+    ctx.fillRect(0, 0, 10, 100);
+    ctx.restore();
 
+    ctx.save();
+    ctx.translate(x2, y2);
+    ctx.rotate(Math.PI / -8);
+    ctx.fillStyle = "red";
+    ctx.fillRect(0, 0, 10, 100);
+    ctx.restore();
+}
 
 //click detection for game
 canvas.addEventListener("click", e => {
