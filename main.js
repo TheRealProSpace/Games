@@ -1,112 +1,46 @@
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 
-let buttons = [
-	{x: 120, y: 120, r: 40, c: "red"},
-	{x: 200, y: 120, r: 40, c: "yellow"},
-	{x: 120, y: 200, r: 40, c: "green"},
-	{x: 200, y: 200, r: 40, c: "blue"},
-	{x: 160, y: 160, r: 40, c: "black"}
+//hangman game
+const words = [
+    "apple", "banana", "orange", "grape", "lemon", "mango", "peach", "plum", "pear", "kiwi",
+    "tiger", "lion", "zebra", "bear", "wolf", "fox", "deer", "otter", "panda", "koala",
+    "planet", "rocket", "asteroid", "comet", "galaxy", "orbit", "venus", "mars", "jupiter", "saturn",
+    "piano", "guitar", "drum", "violin", "flute", "trumpet", "harp", "cello", "saxophone", "keyboard",
+    "river", "mountain", "forest", "desert", "island", "ocean", "valley", "meadow", "canyon", "volcano",
+    "teacher", "student", "library", "science", "history", "writing", "reading", "computer", "school", "pencil",
+    "window", "door", "chair", "table", "lamp", "clock", "phone", "camera", "watch", "keyboard",
+    "soccer", "basketball", "tennis", "baseball", "hockey", "golf", "swimming", "cycling", "running", "throwing",
+    "shadow", "sunlight", "rainbow", "cloud", "storm", "thunder", "lightning", "wind", "snow", "rain",
+    "friend", "family", "holiday", "journey", "adventure", "memory", "dream", "happy", "smile", "music",
+    "garden", "flower", "tree", "branch", "leaf", "root", "breeze", "petal", "sunflower", "rose",
+    "castle", "forest", "dragon", "knight", "shield", "sword", "ancient", "travel", "magic", "quest"
 ];
 
-let randoms = [];
-let player = [];
-let ammount = 1;
+let randomWord;
+let base = {x: 100, y: 300, w: 100, h: 10};
+let pole = {x: 140, y: 300, w: 10, h: -200};
+let top = {x: 140, y: 100, w: 50, h: 10};
 
-for (let i = 0; i < 31; i++) {
-	let e = Math.random() * (3);
-	if (e === 0) {
-		randoms.push("red");
-	} else if (e === 1) {
-		randoms.push("yellow");
-	} else if (e === 2) {
-		randoms.push("green");
-	} else if (e === 3) {
-		randoms.push("blue");
-	}
+function randWord() {
+    let rand = Math.floor(Math.random() * (words.length));
+    randomWord = words[rand];
 }
 
-
-canvas.addEventListener("click", (e) => {
-	const rect = canvas.getBoundingClientRect();
-	const mouseX = e.clientX - rect.left;
-	const mouseY = e.clientY - rect.top;
-
-	// Check which button was clicked
-	buttons.forEach(btn => {
-		const distance = Math.sqrt(
-			Math.pow(mouseX - btn.x, 2) + Math.pow(mouseY - btn.y, 2)
-		);
-
-		if (distance < btn.r) {
-			console.log(`Clicked ${btn.c}`);
-			// Add to sequence or handle click
-			switch (btn.c) {
-				case "red":
-					player.push("red");
-				case "yellow":
-					player.push("yellow");
-				case "green":
-					player.push("green");
-				case "blue":
-					player.push("blue");
-			}
-		}
-	});
-});
-
-function updateButtons() {
-	switch (ammount) {
-		for (let i = 0; i < 31; i++) {
-		    case i:
-		    	
-		}
-		case 1:
-			let e1 = randoms[0];
-			switch (e1) {
-			    case "red":
-			    	buttons[0].c = "black";
-			    	setTimeout(() => {
-			    	    buttons[0].c = "red";
-			    	});
-			    case "yellow":
-			    	buttons[0].c = "black";
-			    	setTimeout(() => {
-			    	    buttons[0].c = "yellow";
-			    	});
-			    case "green":
-			    	buttons[0].c = "black";
-			    	setTimeout(() => {
-			    	    buttons[0].c = "green";
-			    	});
-			    case "blue":
-			    	buttons[0].c = "black";
-			    	setTimeout(() => {
-			    	    buttons[0].c = "blue";
-			    	});
-			}
-			
-			
-	}
+function hangManStructure() {
+    ctx.fillStyle = "white";
+    ctx.fillRect(base.x, base.y, base.w, base.h);
+    ctx.fillRect(pole.x, pole.y, pole.w, pole.h);
+    ctx.fillRect(top.x, top.y, top.w, top.h);
 }
-
-
-function drawButtons() {
-	for (let i = 0; i < buttons.length; i++) {
-		ctx.fillStyle = buttons[i].c;
-		ctx.beginPath();
-		ctx.arc(buttons[i].x, buttons[i].y, buttons[i].r, 0, Math.PI * 2);
-		 ctx.fill();
-	}
-}
-
 
 //update
 function update() {
-	requestAnimationFrame(update);
-	ctx.clearRect(0, 0, 400, 400);
-	
-	//updates
-	drawButtons();
+    requestAnimationFrame(update);
+    ctx.clearRect(0, 0, 400, 400);
+    
+    //updates
+    hangManSttucture();
 }
 update();
+randWord();
