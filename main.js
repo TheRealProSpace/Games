@@ -33,11 +33,12 @@ let Lleg = {x: 195, y: 280, w: 50, h: 10};
 let Rleg = {x: 230, y: 235, w: 50, h: 10};
 
 
-let hang = 6;
+let hang = 0;
 
 function randWord() {
 	let rand = Math.floor(Math.random() * words.length);
 	randomWord = words[rand];
+	//alert(randomWord);
 }
 
 function hangManStructure() {
@@ -48,19 +49,20 @@ function hangManStructure() {
 	ctx.fillRect(rope.x, rope.y, rope.w, rope.h);
 	
 	switch (hang) {
-	    case 1:
-	    	//head
-	    	ctx.beginPath();
-	    	ctx.arc(head1.x, head1.y, head1.r, 0, Math.PI * 2);
+		case 1:
+			//head
+			ctx.beginPath();
+			ctx.arc(head1.x, head1.y, head1.r, 0, Math.PI * 2);
 			ctx.fill();
 			ctx.fillStyle = "#333";
 			ctx.beginPath();
 			ctx.arc(head2.x, head2.y, head2.r, 0, Math.PI * 2);
 			ctx.fill();
-	    case 2:
-	    	/head
-	    	ctx.beginPath();
-	    	ctx.arc(head1.x, head1.y, head1.r, 0, Math.PI * 2);
+			break;
+		case 2:
+			//head
+			ctx.beginPath();
+			ctx.arc(head1.x, head1.y, head1.r, 0, Math.PI * 2);
 			ctx.fill();
 			ctx.fillStyle = "#333";
 			ctx.beginPath();
@@ -69,10 +71,11 @@ function hangManStructure() {
 			//body
 			ctx.fillStyle = "white";
 			ctx.fillRect(body.x, body.y, body.w, body.h);
-	    case 3:
-	    	/head
-	    	ctx.beginPath();
-	    	ctx.arc(head1.x, head1.y, head1.r, 0, Math.PI * 2);
+			break;
+		case 3:
+			//head
+			ctx.beginPath();
+			ctx.arc(head1.x, head1.y, head1.r, 0, Math.PI * 2);
 			ctx.fill();
 			ctx.fillStyle = "#333";
 			ctx.beginPath();
@@ -87,10 +90,11 @@ function hangManStructure() {
 			ctx.rotate(Math.PI / -4);
 			ctx.fillRect(0, 0, Larm.w, Larm.h);
 			ctx.restore();
-	    case 4:
-	    	/head
-	    	ctx.beginPath();
-	    	ctx.arc(head1.x, head1.y, head1.r, 0, Math.PI * 2);
+			break;
+		case 4:
+			//head
+			ctx.beginPath();
+			ctx.arc(head1.x, head1.y, head1.r, 0, Math.PI * 2);
 			ctx.fill();
 			ctx.fillStyle = "#333";
 			ctx.beginPath();
@@ -111,10 +115,11 @@ function hangManStructure() {
 			ctx.rotate(Math.PI / 4);
 			ctx.fillRect(0, 0, Rarm.w, Rarm.h);
 			ctx.restore();
-	    case 5:
-	    	/head
-	    	ctx.beginPath();
-	    	ctx.arc(head1.x, head1.y, head1.r, 0, Math.PI * 2);
+			break;
+		case 5:
+			//head
+			ctx.beginPath();
+			ctx.arc(head1.x, head1.y, head1.r, 0, Math.PI * 2);
 			ctx.fill();
 			ctx.fillStyle = "#333";
 			ctx.beginPath();
@@ -141,10 +146,11 @@ function hangManStructure() {
 			ctx.rotate(Math.PI / -3);
 			ctx.fillRect(0, 0, Lleg.w, Lleg.h);
 			ctx.restore();
-	    case 6:
-	    	//head
-	    	ctx.beginPath();
-	    	ctx.arc(head1.x, head1.y, head1.r, 0, Math.PI * 2);
+			break;
+		case 6:
+			//head
+			ctx.beginPath();
+			ctx.arc(head1.x, head1.y, head1.r, 0, Math.PI * 2);
 			ctx.fill();
 			ctx.fillStyle = "#333";
 			ctx.beginPath();
@@ -177,7 +183,16 @@ function hangManStructure() {
 			ctx.rotate(Math.PI / 3);
 			ctx.fillRect(0, 0, Rleg.w, Rleg.h);
 			ctx.restore();
+			break;
 	}
+}
+
+let text = "_".repeat(randomWord.length).split("").join(" ");
+
+function wordText() {
+    ctx.font = "24px Arial";
+    ctx.fillStyle = "white";
+    ctx.fillText(text, 50, 50);
 }
 
 //update
