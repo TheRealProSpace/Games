@@ -32,15 +32,21 @@ let Rarm = {x: 230, y: 185, w: 50, h: 10};
 let Lleg = {x: 195, y: 280, w: 50, h: 10};
 let Rleg = {x: 230, y: 235, w: 50, h: 10};
 
-
 let hang = 0;
+let hiddenWord = [];
+let wrong = [];
+let guessed = "";
 
 function randWord() {
 	let rand = Math.floor(Math.random() * words.length);
 	randomWord = words[rand];
-	//alert(randomWord);
+	
+	// Initialize hiddenWord with underscores
+	hiddenWord = randomWord.split("").map(() => "_");
 }
+
 randWord();
+
 function hangManStructure() {
 	ctx.fillStyle = "white";
 	ctx.fillRect(base.x, base.y, base.w, base.h);
@@ -187,26 +193,50 @@ function hangManStructure() {
 	}
 }
 
-let text = "_".repeat(randomWord.length).split("").join(" ");
-let wrong = [];
-
-
 function wordText() {
     ctx.font = "35px Arial";
     ctx.fillStyle = "white";
-    ctx.fillText(text, 50, 50);
+    ctx.fillText(hiddenWord.join(" "), 50, 50);
+	
+	// Display wrong guesses
+	ctx.font = "20px Arial";
+	ctx.fillText("Wrong: " + wrong.join(", "), 50, 350);
 }
 
-let guessed = "";
-
 function guess() {
-    guessed = prompt("guess a letter");
+    guessed = prompt("guess a letter").toLowerCase();
 }
 
 function updateGuess() {
-    if (guessed )
+    if (guessed) {
+        let isCorrect = false;
+        
+        // Check if letter is in the word
+        for (let i = 0; i < randomWord.length; i++) {
+            if (randomWord[i] === guessed) {
+                hiddenWord[i] = guessed;  // Reveal the letter
+                isCorrect = true;
+            }
+        }
+        
+        // If wrong guess, add to wrong array
+        if (!isCorrect) {
+            if (!wrong.includes(guessed)) {  // Don't add duplicate
+                wrong.push(guessed);
+                hang++;  // Add body part
+            }
+        }
+        
+        guessed = "";  // Reset for next guess
+    }
 }
 
+// Listen for keyboard input
+document.addEventListener("keydown", (e) => {
+    if (e.key.length === 1) {  // Only single letters
+        guessed = e.key.toLowerCase();
+    }
+});
 
 //update
 function update() {
@@ -219,5 +249,4 @@ function update() {
 	updateGuess();
 }
 
-randWord();
 update();
