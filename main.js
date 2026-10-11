@@ -40,7 +40,7 @@ function randWord() {
 	randomWord = words[rand];
 	//alert(randomWord);
 }
-
+randWord();
 function hangManStructure() {
 	ctx.fillStyle = "white";
 	ctx.fillRect(base.x, base.y, base.w, base.h);
@@ -188,12 +188,25 @@ function hangManStructure() {
 }
 
 let text = "_".repeat(randomWord.length).split("").join(" ");
+let wrong = [];
+
 
 function wordText() {
-    ctx.font = "24px Arial";
+    ctx.font = "35px Arial";
     ctx.fillStyle = "white";
     ctx.fillText(text, 50, 50);
 }
+
+let guessed = "";
+
+function guess() {
+    guessed = prompt("guess a letter");
+}
+
+function updateGuess() {
+    if (guessed )
+}
+
 
 //update
 function update() {
@@ -202,6 +215,8 @@ function update() {
 	
 	//updates
 	hangManStructure();
+	wordText();
+	updateGuess();
 }
 
 randWord();
