@@ -26,8 +26,13 @@ let rope = {x: 220, y: 100, w: 10, h: 30};
 //hangman
 let head1 = {x: 225, y: 150, r: 30};
 let head2 = {x: 225, y: 150, r: 25};
-let body = {x: 220, y: 175, w: 10, h: 50};
-let Larm = {x: 220, y: 190, w: 50, h: 10};
+let body = {x: 220, y: 175, w: 10, h: 70};
+let Larm = {x: 185, y: 220, w: 50, h: 10};
+let Rarm = {x: 230, y: 185, w: 50, h: 10};
+let Lleg = {x: 195, y: 280, w: 50, h: 10};
+let Rleg = {x: 230, y: 235, w: 50, h: 10};
+
+
 let hang = 6;
 
 function randWord() {
@@ -44,15 +49,98 @@ function hangManStructure() {
 	
 	switch (hang) {
 	    case 1:
-	    	
+	    	//head
+	    	ctx.beginPath();
+	    	ctx.arc(head1.x, head1.y, head1.r, 0, Math.PI * 2);
+			ctx.fill();
+			ctx.fillStyle = "#333";
+			ctx.beginPath();
+			ctx.arc(head2.x, head2.y, head2.r, 0, Math.PI * 2);
+			ctx.fill();
 	    case 2:
-	    	
+	    	/head
+	    	ctx.beginPath();
+	    	ctx.arc(head1.x, head1.y, head1.r, 0, Math.PI * 2);
+			ctx.fill();
+			ctx.fillStyle = "#333";
+			ctx.beginPath();
+			ctx.arc(head2.x, head2.y, head2.r, 0, Math.PI * 2);
+			ctx.fill();
+			//body
+			ctx.fillStyle = "white";
+			ctx.fillRect(body.x, body.y, body.w, body.h);
 	    case 3:
-	    	
+	    	/head
+	    	ctx.beginPath();
+	    	ctx.arc(head1.x, head1.y, head1.r, 0, Math.PI * 2);
+			ctx.fill();
+			ctx.fillStyle = "#333";
+			ctx.beginPath();
+			ctx.arc(head2.x, head2.y, head2.r, 0, Math.PI * 2);
+			ctx.fill();
+			//body
+			ctx.fillStyle = "white";
+			ctx.fillRect(body.x, body.y, body.w, body.h);
+			//left arm
+			ctx.save();
+			ctx.translate(Larm.x, Larm.y);
+			ctx.rotate(Math.PI / -4);
+			ctx.fillRect(0, 0, Larm.w, Larm.h);
+			ctx.restore();
 	    case 4:
-	    	
+	    	/head
+	    	ctx.beginPath();
+	    	ctx.arc(head1.x, head1.y, head1.r, 0, Math.PI * 2);
+			ctx.fill();
+			ctx.fillStyle = "#333";
+			ctx.beginPath();
+			ctx.arc(head2.x, head2.y, head2.r, 0, Math.PI * 2);
+			ctx.fill();
+			//body
+			ctx.fillStyle = "white";
+			ctx.fillRect(body.x, body.y, body.w, body.h);
+			//left arm
+			ctx.save();
+			ctx.translate(Larm.x, Larm.y);
+			ctx.rotate(Math.PI / -4);
+			ctx.fillRect(0, 0, Larm.w, Larm.h);
+			ctx.restore();
+			//right arm
+			ctx.save();
+			ctx.translate(Rarm.x, Rarm.y);
+			ctx.rotate(Math.PI / 4);
+			ctx.fillRect(0, 0, Rarm.w, Rarm.h);
+			ctx.restore();
 	    case 5:
-	    	
+	    	/head
+	    	ctx.beginPath();
+	    	ctx.arc(head1.x, head1.y, head1.r, 0, Math.PI * 2);
+			ctx.fill();
+			ctx.fillStyle = "#333";
+			ctx.beginPath();
+			ctx.arc(head2.x, head2.y, head2.r, 0, Math.PI * 2);
+			ctx.fill();
+			//body
+			ctx.fillStyle = "white";
+			ctx.fillRect(body.x, body.y, body.w, body.h);
+			//left arm
+			ctx.save();
+			ctx.translate(Larm.x, Larm.y);
+			ctx.rotate(Math.PI / -4);
+			ctx.fillRect(0, 0, Larm.w, Larm.h);
+			ctx.restore();
+			//right arm
+			ctx.save();
+			ctx.translate(Rarm.x, Rarm.y);
+			ctx.rotate(Math.PI / 4);
+			ctx.fillRect(0, 0, Rarm.w, Rarm.h);
+			ctx.restore();
+			//left leg
+			ctx.save();
+			ctx.translate(Lleg.x, Lleg.y);
+			ctx.rotate(Math.PI / -3);
+			ctx.fillRect(0, 0, Lleg.w, Lleg.h);
+			ctx.restore();
 	    case 6:
 	    	//head
 	    	ctx.beginPath();
@@ -68,8 +156,26 @@ function hangManStructure() {
 			//left arm
 			ctx.save();
 			ctx.translate(Larm.x, Larm.y);
+			ctx.rotate(Math.PI / -4);
+			ctx.fillRect(0, 0, Larm.w, Larm.h);
+			ctx.restore();
+			//right arm
+			ctx.save();
+			ctx.translate(Rarm.x, Rarm.y);
 			ctx.rotate(Math.PI / 4);
-			ctx.fillRect(Larm.x, Larm.y, Larm.w, Larm.h);
+			ctx.fillRect(0, 0, Rarm.w, Rarm.h);
+			ctx.restore();
+			//left leg
+			ctx.save();
+			ctx.translate(Lleg.x, Lleg.y);
+			ctx.rotate(Math.PI / -3);
+			ctx.fillRect(0, 0, Lleg.w, Lleg.h);
+			ctx.restore();
+			//right leg
+			ctx.save();
+			ctx.translate(Rleg.x, Rleg.y);
+			ctx.rotate(Math.PI / 3);
+			ctx.fillRect(0, 0, Rleg.w, Rleg.h);
 			ctx.restore();
 	}
 }
